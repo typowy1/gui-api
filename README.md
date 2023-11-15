@@ -5,6 +5,6 @@ mvn clean test '-Dsurefire.suiteXmlFiles=src\test\resources\testSuite\gui_tests_
 mvn clean test -Dsurefire.suiteXmlFiles=src\test\resources\testSuite\gui_tests_suite.xml
 
 ## **Generowanie Allure raportu z poziomu terminala**
-- Pierw trzba uruchomić testy z poziomu terminala
+- Pierw trzeba uruchomić testy z poziomu terminala
 
 mvn allure:report
