@@ -9,7 +9,7 @@
     <test name="Top Menu Tests">
         <parameter name="browser" value="CHROME"/>
         <classes>
-            <class name="pl.example.gui.tests.TopMenuTests"/>
+            <class name="pl.example.gui.tests.ExampleTopMenuTests"/>
         </classes>
     </test>
 

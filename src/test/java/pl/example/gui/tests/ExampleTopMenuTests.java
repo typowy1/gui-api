@@ -7,7 +7,7 @@ import pl.example.gui.pages.TopMenuPage;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
-public class TopMenuTests extends BaseTest {
+public class ExampleTopMenuTests extends BaseTest {
 
     TopMenuPage topMenuPage;
     AboutUsPage aboutUsPage;
