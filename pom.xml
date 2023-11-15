@@ -10,8 +10,8 @@
 
     <properties>
         <aspectj.version>1.9.20</aspectj.version>
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
     </properties>
 
     <dependencies>
@@ -121,8 +121,8 @@
                 <version>3.10.1</version>
                 <configuration>
                     <encoding>UTF-8</encoding>
-                    <source>17</source>
-                    <target>17</target>
+                    <source>11</source>
+                    <target>11</target>
                 </configuration>
             </plugin>
         </plugins>
