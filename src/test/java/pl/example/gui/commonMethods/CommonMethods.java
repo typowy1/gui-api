@@ -22,7 +22,7 @@ public class CommonMethods {
 
     public static void markElementWithColor(WebElement element) {
         javascriptExecutor = (JavascriptExecutor) DriverSetup.getWebDriver();
-        javascriptExecutor.executeScript("arguments[0].style.backgroundColor = 'salmon';", element);
+        javascriptExecutor.executeScript("arguments[0].style.backgroundColor = 'lightblue';", element);
     }
 
     public static void scrollToElement(WebElement element) {
