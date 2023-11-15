@@ -22,7 +22,6 @@ public class BaseTest {
         DriverSetup.setWebDriver(browserType);
         DriverSetup.getWebDriver();
         DriverSetup.getWebDriver().manage().window().maximize();
-
         PageUrl.goToPage(APPLICATION_URL);
     }
 
