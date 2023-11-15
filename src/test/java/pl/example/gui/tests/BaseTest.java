@@ -16,7 +16,7 @@ public class BaseTest {
 
     @Step("Setting up browser to: {browserType}, maximizing browser window, navigating to Home Page")
     @Parameters("browser")
-    //browser parametr z pliku gui_test_suite.xml, jeśli go nie będzie to testy uruchomia sie na przgladarce podanej w propertiesach
+    //browser parametr z pliku gui_test_suite.xml, jeśli go nie będzie lub uruchomimy testy z poziomu klasy to testy uruchomia sie na przgladarce podanej w propertiesach
     @BeforeMethod
     public void beforeTest(@Optional Browser browserType) {
         DriverSetup.setWebDriver(browserType);
