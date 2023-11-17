@@ -1,8 +1,16 @@
 ## **Uruchamianie testów z poziomu terminala:**
 
-mvn clean test '-Dsurefire.suiteXmlFiles=src\test\resources\testSuite\gui_tests_suite.xml'
+**Dla Firefox:**
 
-mvn clean test -Dsurefire.suiteXmlFiles=src\test\resources\testSuite\gui_tests_suite.xml
+mvn clean test -Dbrowser=FIREFOX '-Dsurefire.suiteXmlFiles=src\test\resources\testSuite\gui_tests_suite.xml'
+
+mvn clean test -Dbrowser=FIREFOX -Dsurefire.suiteXmlFiles=src\test\resources\testSuite\gui_tests_suite.xml
+
+**Dla Chrome:**
+
+mvn clean test -Dbrowser=CHROME '-Dsurefire.suiteXmlFiles=src\test\resources\testSuite\gui_tests_suite.xml'
+
+mvn clean test -Dbrowser=CHROME -Dsurefire.suiteXmlFiles=src\test\resources\testSuite\gui_tests_suite.xml
 
 ## **Generowanie Allure raportu z poziomu terminala**
 1. Uruchamiamy testy z poziomu terminala 

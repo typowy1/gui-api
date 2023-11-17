@@ -1,5 +1,6 @@
 package pl.example.gui.driver.manager;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import pl.example.gui.driver.browser.Browser;
 import pl.example.gui.driver.browser.BrowserSetup;
@@ -22,6 +23,7 @@ public class DriverSetup {
     }
 
     //Metoda służy od ustawiania typu przeglądarki dla danego wątku, jezeli browserType = null(czyli w pliku test suite nie ma podanej przglądarki to, pobieramy ją z propertiesów
+    @Step("Setting up browser to: {browserType}")
     public static void setWebDriver(Browser browserType) {
         WebDriver webDriverBrowser = null;
 
