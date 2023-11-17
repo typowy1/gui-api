@@ -59,7 +59,7 @@ public class ExampleTests extends BaseTest {
     @Description("Check if the address in the footer is correct")
     public void isAddressInFooterCorrectFailedTest() {
         footerPage = new FooterPage();
-        assertThat(footerPage.getTextFromAddressInFooter()).isEqualTo
-                ("00-838 Warszawa");
+        String expected = footerPage.getTextFromAddressInFooter();
+        assertThat(expected).isEqualTo("00-838 Warszawa");
     }
 }
