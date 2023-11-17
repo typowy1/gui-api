@@ -6,10 +6,10 @@
         <listener class-name="pl.example.gui.utils.TestListener"/>
     </listeners>
 
-    <test name="Top Menu Tests">
+    <test name="ExampleTests">
         <parameter name="browser" value="CHROME"/>
         <classes>
-            <class name="pl.example.gui.tests.ExampleTopMenuTests"/>
+            <class name="pl.example.gui.tests.ExampleTests"/>
         </classes>
     </test>
 
