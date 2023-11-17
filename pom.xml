@@ -80,8 +80,10 @@
             <plugin>
                 <groupId>io.qameta.allure</groupId>
                 <artifactId>allure-maven</artifactId>
+<!--                dla javy 17 <version>2.10.0</version>-->
                 <version>2.12.0</version>
                 <configuration>
+<!--                    dla javy 17 <reportVersion>2.14.0</reportVersion>-->
                     <reportVersion>2.12.0</reportVersion>
                     <propertiesFilePath>${basedir}/src/main/resources/allure.properties</propertiesFilePath>
                 </configuration>
