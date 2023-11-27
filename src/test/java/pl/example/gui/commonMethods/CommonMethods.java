@@ -9,9 +9,11 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import pl.example.gui.driver.manager.DriverSetup;
 import pl.example.gui.waits.Waits;
+import propertiesConfig.ConfigurationProperties;
 
 import java.util.List;
 import java.util.Random;
+import java.util.stream.Collectors;
 
 
 public class CommonMethods {
@@ -54,6 +56,34 @@ public class CommonMethods {
         String correctNumber = element.getText().replace(" ", "")
                 .substring(startFrom, element.getText().length() - quantity).trim();
         return correctNumber;
+    }
+
+    public static String getHrefFromElement(WebElement element) {
+        Waits.waitUntilElementIsVisible(element);
+        CommonMethods.markElementWithColor(element);
+        return element.getDomProperty("href").trim();
+    }
+
+    public static boolean checkIfElementIsDisplayed(WebElement element) {
+        CommonMethods.markElementWithColor(element);
+        return element.isDisplayed() && element.getSize().getHeight() > 0;
+    }
+
+    public static String getDomAttributeFromElement(WebElement element, String attribute) {
+        Waits.waitUntilElementIsVisible(element);
+        CommonMethods.markElementWithColor(element);
+        return element.getDomAttribute(attribute);
+    }
+
+    public static String getCurrentUrlString() {
+        return DriverSetup.getWebDriver().getCurrentUrl();
+    }
+
+    public static List<String> getTextValuesFromWebElementsList(List<WebElement> webElementList) {
+        return webElementList.stream().map(element -> {
+            CommonMethods.markElementWithColor(element);
+            return element.getText();
+        }).collect(Collectors.toList());
     }
 
     public List<WebElement> getElementsListByLocator(By by) {
