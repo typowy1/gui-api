@@ -6,6 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import pl.example.gui.driver.manager.DriverSetup;
 import pl.example.gui.waits.Waits;
@@ -33,6 +34,11 @@ public class CommonMethods {
         javascriptExecutor.executeScript("arguments[0].scrollIntoView(true);", element);
     }
 
+    public static void scrollToTop() {
+        javascriptExecutor = (JavascriptExecutor) DriverSetup.getWebDriver();
+        javascriptExecutor.executeScript("window.scrollTo(0, -document.body.scrollHeight)");
+    }
+
     public static void clickCheckBox(WebElement element) {
         Waits.waitUntilElementIsClickable(element);
         if (!element.isSelected()) {
@@ -50,6 +56,18 @@ public class CommonMethods {
         Waits.waitUntilElementIsVisible(element);
         CommonMethods.markElementWithColor(element);
         return element.getText().trim();
+    }
+
+    public static void hoverOverElement(WebElement element) {
+        Waits.waitUntilElementIsVisible(element);
+        CommonMethods.markElementWithColor(element);
+
+        Actions actions = new Actions(DriverSetup.getWebDriver());
+        actions.moveToElement(element).perform();
+    }
+
+    public static String getCurrentUrlString() {
+        return DriverSetup.getWebDriver().getCurrentUrl();
     }
 
     public static String replaceUnnecessaryNumber(WebElement element, int startFrom, int quantity) {
@@ -73,10 +91,6 @@ public class CommonMethods {
         Waits.waitUntilElementIsVisible(element);
         CommonMethods.markElementWithColor(element);
         return element.getDomAttribute(attribute);
-    }
-
-    public static String getCurrentUrlString() {
-        return DriverSetup.getWebDriver().getCurrentUrl();
     }
 
     public static List<String> getTextValuesFromWebElementsList(List<WebElement> webElementList) {
