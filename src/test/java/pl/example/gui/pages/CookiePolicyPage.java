@@ -14,10 +14,4 @@ public class CookiePolicyPage extends BasePage {
         return cookiePolicyDocument;
     }
 
-    public void switchToPdfViewer() {
-        WebDriver driver = DriverSetup.getWebDriver();
-        driver.switchTo().frame(cookiePolicyDocument);
-        // TODO: raczej do usunięcia
-    }
-
 }

@@ -10,13 +10,10 @@ import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import pl.example.gui.driver.manager.DriverSetup;
 import pl.example.gui.waits.Waits;
-import propertiesConfig.ConfigurationProperties;
 
-import java.lang.reflect.Array;
 import java.util.List;
 import java.util.Random;
 import java.util.stream.Collectors;
-import java.util.Set;
 
 
 public class CommonMethods {

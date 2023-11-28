@@ -36,7 +36,6 @@ public class TopMenuE2ETests extends BaseTest {
     @Description("Check if every Top Menu tab will return the correct page")
     public void isEveryTopMenuLinkClickable() {
         topMenuPage = new TopMenuPage();
-        topMenuPage.clickOnAcceptCookies();
         topMenuPage.clickOnAboutUsLink();
 
         aboutUsPage = new AboutUsPage();
