@@ -33,9 +33,6 @@ public class TopMenuPage extends BasePage {
     @FindBy(css = "ul#top-menu .menu-item-4001 li")
     private List<WebElement> listOfOfferLinks;
 
-    @FindBy(css = "button.cky-btn-accept")
-    private WebElement cookiesAcceptButton;
-
     @Step("Click on About Us Link")
     public void clickOnAboutUsLink() {
         CommonMethods.clickOnElement(aboutUsLink);
@@ -119,11 +116,5 @@ public class TopMenuPage extends BasePage {
         }
         CommonMethods.clickOnElement(listOfOfferLinks.get(index));
         log().info("Clicked on " + tab + " Link");
-    }
-
-    @Step("Click on Accept Cookies")
-    public void clickOnAcceptCookies() {
-        CommonMethods.clickOnElement(cookiesAcceptButton);
-        log().info("Clicked on Accept Cookies");
     }
 }
