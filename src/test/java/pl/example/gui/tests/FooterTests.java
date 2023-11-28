@@ -15,7 +15,6 @@ public class FooterTests extends BaseTest {
     public void beforeFooterTest() {
         footerPage = new FooterPage();
         footerPage.initializeMaps();
-        footerPage.rejectAndCloseCookieBanner();
     }
 
     @Issue("FOOTER-BUG-0")

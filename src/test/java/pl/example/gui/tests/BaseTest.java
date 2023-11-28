@@ -9,11 +9,14 @@ import pl.example.gui.driver.browser.Browser;
 import pl.example.gui.driver.browser.BrowserUtils;
 import pl.example.gui.driver.browser.PageUrl;
 import pl.example.gui.driver.manager.DriverSetup;
+import pl.example.gui.pages.CookiesConsentBarPage;
 import propertiesConfig.ConfigurationProperties;
 
 public class BaseTest {
 
-    static final String APPLICATION_URL = ConfigurationProperties.getProperty("gui", "app.url");
+    CookiesConsentBarPage cookiesConsentBarPage;
+
+    protected static final String APPLICATION_URL = ConfigurationProperties.getProperty("gui", "app.url");
 
     @Step("Tests setup")
     @Parameters("browser")
@@ -24,6 +27,9 @@ public class BaseTest {
         DriverSetup.getWebDriver();
         BrowserUtils.setWindowSize();
         PageUrl.goToPage(APPLICATION_URL);
+
+        cookiesConsentBarPage = new CookiesConsentBarPage();
+        cookiesConsentBarPage.clickAcceptAllButton();
     }
 
     @Step("Disposing browser")
