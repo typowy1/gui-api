@@ -31,7 +31,7 @@ public class ExampleTests extends BaseTest {
     @TmsLink("ID444") // id przypadku testowego, przekieruje do testu
     @Severity(SeverityLevel.BLOCKER)
     @Test()
-    @Description("Check if the About As tab will return the correct page")
+    @Description("Check if the About Us tab will return the correct page")
     public void isAboutUsLinkClickableFailedTest() {
         topMenuPage = new TopMenuPage();
         topMenuPage.clickOnAboutUsLink();

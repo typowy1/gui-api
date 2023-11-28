@@ -12,9 +12,11 @@ import pl.example.gui.driver.manager.DriverSetup;
 import pl.example.gui.waits.Waits;
 import propertiesConfig.ConfigurationProperties;
 
+import java.lang.reflect.Array;
 import java.util.List;
 import java.util.Random;
 import java.util.stream.Collectors;
+import java.util.Set;
 
 
 public class CommonMethods {
@@ -50,6 +52,25 @@ public class CommonMethods {
         Waits.waitUntilElementIsClickable(element);
         CommonMethods.markElementWithColor(element);
         element.click();
+    }
+
+    public static void clickOnElementUsingJS(WebElement element) {
+        javascriptExecutor = (JavascriptExecutor) DriverSetup.getWebDriver();
+        markElementWithColor(element);
+        javascriptExecutor.executeScript("arguments[0].click();", element);
+    }
+
+    public static void clickOnToggleElement(WebElement toggle) {
+        String currentToggleState = toggle.getAttribute("aria-label");
+        Waits.waitUntilElementIsClickable(toggle);
+        markElementWithColor(toggle);
+        CommonMethods.clickOnElement(toggle);
+
+        if (currentToggleState.contains("Wyłączyć")) {
+            Waits.waitForDomAttributeToContain(toggle, "aria-label", "Włączyć");
+        } else {
+            Waits.waitForDomAttributeToContain(toggle, "aria-label", "Wyłączyć");
+        }
     }
 
     public static String getTextFromElement(WebElement element) {
@@ -116,4 +137,22 @@ public class CommonMethods {
         WebElement rootItem = elementsList.get(randomValue);
         return rootItem;
     }
+
+    public static void refreshPage() {
+        DriverSetup.getWebDriver().navigate().refresh();
+    }
+
+    public static void switchToNewTab() {
+        WebDriver driver = DriverSetup.getWebDriver();
+        String originalWindow = driver.getWindowHandle();
+
+        for (String windowHandle : driver.getWindowHandles()) {
+            if (!originalWindow.contentEquals(windowHandle)) {
+                driver.switchTo().window(windowHandle);
+                break;
+            }
+        }
+    }
+
+
 }

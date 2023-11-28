@@ -1,4 +1,4 @@
-package pl.example.gui.tests;
+package pl.example.gui.tests.E2E;
 
 import io.qameta.allure.Description;
 import io.qameta.allure.Severity;
@@ -6,6 +6,7 @@ import io.qameta.allure.SeverityLevel;
 import io.qameta.allure.TmsLink;
 import org.testng.annotations.Test;
 import pl.example.gui.pages.*;
+import pl.example.gui.tests.BaseTest;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 

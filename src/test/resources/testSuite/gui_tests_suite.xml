@@ -20,6 +20,12 @@
         </classes>
     </test>
 
+    <test name="Cookie preference tests">
+        <classes>
+            <class name="pl.example.gui.tests.CookiePreferenceTests"/>
+        </classes>
+    </test>
+
 <!--    <test name="Top Menu3 Tests">-->
     <test name="Top Menu Tests">
 <!--        <parameter name="browser" value="CHROME"/>-->
