@@ -9,6 +9,7 @@ import org.testng.Assert;
 import pl.example.gui.driver.manager.DriverSetup;
 
 import java.time.Duration;
+import java.util.List;
 
 public class Waits {
 
@@ -77,6 +78,11 @@ public class Waits {
     public static WebElement waitIfStaleElementReferenceException(By by) {
         WebDriverWait webDriverWait = getWebDriverWait();
         return webDriverWait.until(ExpectedConditions.presenceOfElementLocated(by));
+    }
+
+    public static List<WebElement> waitIfStaleElementsListReferenceException(By by) {
+        WebDriverWait webDriverWait = getWebDriverWait();
+        return webDriverWait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(by));
     }
 
     public static void fluentWaitForElementToBeClickable(WebElement element) {

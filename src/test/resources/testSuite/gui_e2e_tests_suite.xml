@@ -27,4 +27,11 @@
         </classes>
     </test>
 
+    <test name="Join Us E2E Tests">
+        <!--        <parameter name="browser" value="CHROME"/>-->
+        <classes>
+            <class name="pl.example.gui.tests.e2e.JoinUsE2ETests"/>
+        </classes>
+    </test>
+
 </suite>

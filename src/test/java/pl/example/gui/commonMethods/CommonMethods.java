@@ -12,7 +12,6 @@ import java.util.List;
 import java.util.Random;
 import java.util.stream.Collectors;
 
-
 public class CommonMethods {
     WebDriver driver = DriverSetup.getWebDriver();
     private static JavascriptExecutor javascriptExecutor;
@@ -39,6 +38,14 @@ public class CommonMethods {
         Waits.waitUntilElementIsClickable(element);
         if (!element.isSelected()) {
             element.click();
+        }
+    }
+
+    public static void clickCheckBoxUsingJS(WebElement element) {
+        javascriptExecutor = (JavascriptExecutor) DriverSetup.getWebDriver();
+        Waits.waitUntilElementIsClickable(element);
+        if (!element.isSelected()) {
+            javascriptExecutor.executeScript("arguments[0].click();", element);
         }
     }
 
@@ -82,6 +89,17 @@ public class CommonMethods {
         return element.getText().trim();
     }
 
+    public static String getTextFromElementNoColor(WebElement element) {
+        Waits.waitUntilElementIsVisible(element);
+        return element.getText().trim();
+    }
+
+    public static void typeIntoElement(WebElement element, String text) {
+        Waits.waitUntilElementIsClickable(element);
+        CommonMethods.markElementWithColor(element);
+        element.sendKeys(text);
+    }
+
     public static void hoverOverElement(WebElement element) {
         Waits.waitUntilElementIsVisible(element);
         CommonMethods.markElementWithColor(element);
@@ -98,6 +116,21 @@ public class CommonMethods {
         String correctNumber = element.getText().replace(" ", "")
                 .substring(startFrom, element.getText().length() - quantity).trim();
         return correctNumber;
+    }
+
+    public static void refocusOnTheSite() {
+        Actions act = new Actions(DriverSetup.getWebDriver());
+        act.moveToLocation(0, 0).click().build().perform();
+    }
+
+    public static WebElement findElementFromListByText(List<WebElement> elementsList, String text) {
+        for (WebElement element : elementsList) {
+            if (getTextFromElementNoColor(element).equals(text)) {
+                logger.info("Element found in list with text: " + text);
+                return element;
+            }
+        }
+        throw new NoSuchElementException("Element not found with text: " + text);
     }
 
     public static String getHrefFromElement(WebElement element) {
