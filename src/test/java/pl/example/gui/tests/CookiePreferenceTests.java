@@ -5,6 +5,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
+import pl.example.commons.CookiesConstants;
 import pl.example.gui.driver.browser.Browser;
 import pl.example.gui.driver.browser.BrowserUtils;
 import pl.example.gui.driver.browser.PageUrl;
@@ -82,12 +83,12 @@ public class CookiePreferenceTests extends BaseTest {
         cookiesCustomizationPage = new CookiesCustomizationPage();
 
         assertThat(cookiesCustomizationPage.getPreferencesToggle().getAttribute("aria-label"))
-                .isEqualTo("Włączyć Preferencyjne");
+                .isEqualTo(CookiesConstants.PREFERENCE_TOGGLE_DISABLED);
 
         cookiesCustomizationPage.clickPreferencesToggle();
 
         assertThat(cookiesCustomizationPage.getPreferencesToggle().getAttribute("aria-label"))
-                .isEqualTo("Wyłączyć Preferencyjne");
+                .isEqualTo(CookiesConstants.PREFERENCE_TOGGLE_ENABLED);
     }
 
     @TmsLink("ID5516")
@@ -99,5 +100,44 @@ public class CookiePreferenceTests extends BaseTest {
         topMenuPage.clickOnCaseStudyLink();
 
         assertThat(cookiesConsentBarPage.getCookiesConsentBar().isDisplayed()).isTrue();
+    }
+
+    @TmsLink("ID5517")
+    @Severity(SeverityLevel.MINOR)
+    @Test()
+    @Description("Verify that button labels in cookies consent bar are displayed correctly")
+    public void verifyConsentBarButtonLabels() {
+        assertThat(cookiesConsentBarPage.getTextFromConsentBarButtons()).usingRecursiveComparison()
+                .isEqualTo(CookiesConstants.CONSENT_BAR_BUTTON_LABELS);
+    }
+
+    @TmsLink("ID5518")
+    @Severity(SeverityLevel.MINOR)
+    @Test()
+    @Description("Verify that headers in cookies consent bar and preference modal are displayed correctly")
+    public void verifyCookieNotificationHeaders() {
+        assertThat(cookiesConsentBarPage.getCookiesConsentBarHeader().getText())
+                .isEqualTo(CookiesConstants.CONSENT_BAR_HEADER_TEXT);
+
+        cookiesConsentBarPage.clickCustomizeButton();
+        cookiesCustomizationPage = new CookiesCustomizationPage();
+
+        assertThat(cookiesCustomizationPage.getCookiePreferenceModalHeader().getText())
+                .isEqualTo(CookiesConstants.PREFERENCE_HEADER_TEXT);
+    }
+
+    @TmsLink("ID5519")
+    @Severity(SeverityLevel.MINOR)
+    @Test()
+    @Description("Verify that labels in cookies preference modal are displayed correctly")
+    public void verifyCookiePreferenceModalLabels() {
+        cookiesConsentBarPage.clickCustomizeButton();
+        cookiesCustomizationPage = new CookiesCustomizationPage();
+
+        assertThat(cookiesCustomizationPage.getTextFromPreferenceModalButtons()).usingRecursiveComparison()
+                .isEqualTo(CookiesConstants.PREFERENCE_BUTTON_LABELS);
+
+        assertThat(cookiesCustomizationPage.getTextFromAccordionButtons()).usingRecursiveComparison()
+                .isEqualTo(CookiesConstants.PREFERENCE_ACCORDION_BTN_LABELS);
     }
 }

@@ -3,7 +3,7 @@ package pl.example.gui.pages;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import pl.example.Commons.FooterConstants;
+import pl.example.commons.FooterConstants;
 import pl.example.gui.commonMethods.CommonMethods;
 
 public class HomePage extends BasePage {

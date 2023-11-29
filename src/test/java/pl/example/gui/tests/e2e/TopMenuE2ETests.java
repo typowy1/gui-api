@@ -1,4 +1,4 @@
-package pl.example.gui.tests.E2E;
+package pl.example.gui.tests.e2e;
 
 import io.qameta.allure.Description;
 import io.qameta.allure.Severity;
