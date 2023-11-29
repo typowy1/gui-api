@@ -32,4 +32,10 @@
         </classes>
     </test>
 
+    <test name="Join Us tests">
+        <classes>
+            <class name="pl.example.gui.tests.JoinUsTests"/>
+        </classes>
+    </test>
+
 </suite>
