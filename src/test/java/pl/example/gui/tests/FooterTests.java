@@ -3,7 +3,7 @@ package pl.example.gui.tests;
 import io.qameta.allure.*;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import pl.example.Commons.FooterConstants;
+import pl.example.commons.FooterConstants;
 import pl.example.gui.pages.FooterPage;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;

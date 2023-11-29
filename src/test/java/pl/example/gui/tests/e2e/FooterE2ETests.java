@@ -1,8 +1,8 @@
-package pl.example.gui.tests.E2E;
+package pl.example.gui.tests.e2e;
 
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import pl.example.Commons.FooterConstants;
+import pl.example.commons.FooterConstants;
 import pl.example.gui.driver.browser.PageUrl;
 import pl.example.gui.pages.FooterPage;
 import pl.example.gui.tests.BaseTest;
