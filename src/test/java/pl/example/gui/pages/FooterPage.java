@@ -56,11 +56,9 @@ public class FooterPage extends BasePage {
     private List<WebElement> footerSocialMediaLinks;
 
     @FindBy(css = ".footer-copyrights .et_pb_text_16_tb_footer a")
-    @CacheLookup
     private WebElement footerCopyrightPrivacyPolicyLink;
 
     @FindBy(css = ".footer-copyrights .et_pb_text_15_tb_footer a")
-    @CacheLookup
     private WebElement footerCopyrightCookiesPolicyLink;
 
     @FindBy(css = ".et_pb_text_17_tb_footer")
