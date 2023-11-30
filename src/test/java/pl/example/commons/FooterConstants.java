@@ -21,6 +21,9 @@ public class FooterConstants {
     public static final List<String> FOOTER_COLUMNS_HEADINGS_GERMAN = new ArrayList<>(List.of(
             "Kontakt","News","Karriere","Folgen Sie uns"
     ));
+    public static final List<String> FOOTER_COLUMNS_HEADINGS_SPANISH = new ArrayList<>(List.of(
+            ""
+    ));
     public static final List<String> FOOTER_SOCIAL_MEDIA_LINKS = new ArrayList<>(List.of(
             "https://www.facebook.com/onwelo/",
             "https://linkedin.com/company/onwelo",
