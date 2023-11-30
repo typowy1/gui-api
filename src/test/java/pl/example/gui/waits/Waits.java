@@ -85,22 +85,6 @@ public class Waits {
         return webDriverWait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(by));
     }
 
-    public static void fluentWaitForElementToBeClickable(WebElement element) {
-        FluentWait<WebDriver> fluentWait = new FluentWait<>(DriverSetup.getWebDriver());
-        fluentWait.withTimeout(Duration.ofSeconds(5));
-        fluentWait.pollingEvery(Duration.ofMillis(600));
-        fluentWait.ignoring(NoSuchElementException.class);
-        fluentWait.until(ExpectedConditions.elementToBeClickable(element));
-    }
-
-    public static void fluentWaitForElementToBeVisible(WebElement element) {
-        FluentWait<WebDriver> fluentWait = new FluentWait<>(DriverSetup.getWebDriver());
-        fluentWait.withTimeout(Duration.ofSeconds(5));
-        fluentWait.pollingEvery(Duration.ofMillis(600));
-        fluentWait.ignoring(NoSuchElementException.class);
-        fluentWait.until(ExpectedConditions.visibilityOf(element));
-    }
-
     // Thread.sleep added because the loop is too fast - movement is not quick enough to change position of element
     // between checks
     public static void waitUntilElementStopsMoving(WebElement element) {
@@ -117,10 +101,12 @@ public class Waits {
         });
     }
 
-    public static void waitForDomAttributeToBe(WebElement element, String attribute, String value) {
-        WebDriverWait webDriverWait = getWebDriverWait();
-        webDriverWait.until(ExpectedConditions.domAttributeToBe(element, attribute, value));
-        webDriverWait.until((ExpectedConditions.attributeContains(element, attribute, value)));
+    public static void waitForToggleStateToSwitch(WebElement toggle, String initialToggleState) {
+        if (initialToggleState.contains("Wyłączyć")) {
+            Waits.waitForDomAttributeToContain(toggle, "aria-label", "Włączyć");
+        } else {
+            Waits.waitForDomAttributeToContain(toggle, "aria-label", "Wyłączyć");
+        }
     }
 
     public static void waitForDomAttributeToContain(WebElement element, String attribute, String value) {
