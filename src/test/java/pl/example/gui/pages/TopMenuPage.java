@@ -81,6 +81,7 @@ public class TopMenuPage extends BasePage {
         log().info("Hovered over Offer Link");
     }
 
+    @Step("Click on link in Offer Dropdown")
     public void clickOnElementInOffer(String tab) {
         int index;
         switch (tab) {
