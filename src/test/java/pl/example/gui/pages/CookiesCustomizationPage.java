@@ -54,14 +54,12 @@ public class CookiesCustomizationPage extends BasePage {
 
     @Step("Click Preferences toggle")
     public void clickPreferencesToggle() {
-        Waits.waitUntilElementStopsMoving(cookiePreferenceModal);
         CommonMethods.clickOnToggleElement(preferencesToggle);
         log().info("Clicked on preferences toggle in cookies customization window");
     }
 
     @Step("Click Performance toggle")
     public void clickPerformanceToggle() {
-        Waits.waitUntilElementStopsMoving(cookiePreferenceModal);
         CommonMethods.scrollToElement(performanceToggle);
         CommonMethods.clickOnToggleElement(performanceToggle);
         log().info("Clicked on performance toggle in cookies customization window");

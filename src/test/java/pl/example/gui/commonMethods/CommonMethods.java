@@ -62,22 +62,18 @@ public class CommonMethods {
     }
 
     public static void clickOnToggleElement(WebElement toggle) {
-        String currentToggleState = toggle.getAttribute("aria-label");
+        String initialToggleState = toggle.getAttribute("aria-label");
         Waits.waitUntilElementIsClickable(toggle);
-        markElementWithColor(toggle);
+        CommonMethods.markElementWithColor(toggle);
         CommonMethods.clickOnMovingElement(toggle);
 
-        if (currentToggleState.contains("Wyłączyć")) {
-            Waits.waitForDomAttributeToContain(toggle, "aria-label", "Włączyć");
-        } else {
-            Waits.waitForDomAttributeToContain(toggle, "aria-label", "Wyłączyć");
-        }
+        Waits.waitForToggleStateToSwitch(toggle, initialToggleState);
     }
 
     public static void clickOnMovingElement(WebElement element) {
         try {
-            clickOnElementUsingJS(element);
-            markElementWithColor(element);
+            CommonMethods.clickOnElementUsingJS(element);
+            CommonMethods.markElementWithColor(element);
         } catch (ElementClickInterceptedException e) {
             throw new RuntimeException(e);
         }
@@ -189,6 +185,4 @@ public class CommonMethods {
             }
         }
     }
-
-
 }
