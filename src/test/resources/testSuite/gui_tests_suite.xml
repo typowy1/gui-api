@@ -7,7 +7,7 @@
     </listeners>
 
     <test name="ExampleTests" enabled="false">
-<!--        można ustawić na sztywno przeglądarkę, jak poniżej, projekt ustawiony jest pod parametryzacje w Jenkisie, to powinno być zacomentowane przed mergem-->
+<!--        parametr służył do ustawiania przeglądarki, teraz ustawioamy ją z poziomu propertiesów lub komendy w terminalu -->
 <!--        <parameter name="browser" value="CHROME"/>-->
         <classes>
             <class name="pl.example.gui.tests.ExampleTests"/>
