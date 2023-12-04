@@ -34,8 +34,8 @@ public class DriverSetup {
         } else {
             webDriverBrowser = new BrowserSetup(browserType, remoteRun).getBrowser();
         }
-
-        webDriverBrowser = WebDriverEventListenerRegistrar.registerWebDriverEventListener(webDriverBrowser);
+//       EventListener generuje zbytdużą ilość logów, mozna odkomentować w razie potrzeby
+//        webDriverBrowser = WebDriverEventListenerRegistrar.registerWebDriverEventListener(webDriverBrowser);
         browserTypeThreadLocal.set(browserType);
         webDriverThreadLocal.set(webDriverBrowser);
     }
