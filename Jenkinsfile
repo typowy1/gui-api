@@ -26,10 +26,13 @@ pipeline {
             }
         }
         failure {
-        script {
-            echo "Emails: ${params.emailRecipient}
-            mail bcc: '', body:"<>Example</b><br> Build URL: FAILURE: ${env.BUILD_URL} <br> Console Output: ${env.BUILD_URL}/console" cc: '', charset:'UTF-8', from'', mimeType: 'text/html, subject: Build failed in Jenkins: ${env.JOB_NAME} #${env.BUILD_NUMBER}", to: "${params.emailRecipient}";
-            }
+        emailext (
+         to: "${params.emailRecipient}",
+         subject: "Build failed in Jenkins: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
+         body:
+         "<br> Allure Report: ${env.BUILD_URL}/allure <br> Build URL: FAILURE: ${env.BUILD_URL} <br> Console Output: ${env.BUILD_URL}/console",
+         mimeType: 'text/html'
+          );
         }
     }
 }
