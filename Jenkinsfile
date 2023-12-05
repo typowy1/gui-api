@@ -26,8 +26,13 @@ pipeline {
             }
         }
         failure {
+        emailext (
+                    to: "${params.emailRecipient}",
+                    subject: "Build failed in Jenkins: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
+                    body:
+                    "<>Example</b><br> Build URL: FAILURE: ${env.BUILD_URL} <br> Console Output: ${env.BUILD_URL}/console"
 
-            mail bcc: '', body:"<>Example</b><br> Build URL: FAILURE: ${env.BUILD_URL} <br> Console Output: ${env.BUILD_URL}/console" cc: '', charset:'UTF-8', from'', mimeType: 'text/html, subject: Build failed in Jenkins: ${env.JOB_NAME} #${env.BUILD_NUMBER}", to: "${params.emailRecipient}";
+                    );
         }
     }
 }
