@@ -28,10 +28,12 @@ pipeline {
         failure {
             emailext (
             to: "${params.emailRecipient}",
-            replyTo: '$DEFAULT_REPLYTO',
-            subject: '$DEFAULT_SUBJECT',
-            body: '$DEFAULT_CONTENT',
-            mimeType: 'text/html'
+            subject: "FAILURE: ${env.JOB_NAME} - Build #${env.BUILD_NUMBER}",
+            body:  """
+            Allure report is avaible to see at ${env.BUILD_URL}/allure.
+            Check console output at ${env.BUILD_URL} to view the results.
+            """
+
             );
         }
     }
