@@ -9,7 +9,7 @@ pipeline {
 
         stage('Execute tests') {
             steps {
-                bat "mvn clean test -Dbrowser=${params.browser} -Dsurefire.suiteXmlFiles=src/test/resources/testSuite/${params['Test suite']}.xml"
+                bat "mvn clean test -Dbrowser=${params.browser} -Dsurefire.suiteXmlFiles=src/test/resources/testSuite/${params.TestSuite}.xml"
             }
         }
     }
