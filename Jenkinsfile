@@ -26,15 +26,8 @@ pipeline {
             }
         }
         failure {
-            emailext (
-            to: "${params.emailRecipient}",
-            subject: "FAILURE: ${env.JOB_NAME} - Build #${env.BUILD_NUMBER}",
-            body:  """
-            Allure report is avaible to see at ${env.BUILD_URL}/allure.
-            Check console output at ${env.BUILD_URL} to view the results.
-            """
-
-            );
+            echo "Emails: ${params.emailRecipient}
+            mail bcc: '', body:"<>Example</b><br> Build URL: FAILURE: ${env.BUILD_URL} <br> Console Output: ${env.BUILD_URL}/console" cc: '', charset:'UTF-8', from'', mimeType: 'text/html, subject: Build failed in Jenkins: ${env.JOB_NAME} #${env.BUILD_NUMBER}", to: "${params.emailRecipient}";
         }
     }
 }
