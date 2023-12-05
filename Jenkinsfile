@@ -30,7 +30,9 @@ pipeline {
          to: "${params.emailRecipient}",
          subject: "Build failed in Jenkins: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
          body:
-         "<br> Allure Report: ${env.BUILD_URL}/allure <br> Build URL: FAILURE: ${env.BUILD_URL} <br> Console Output: ${env.BUILD_URL}/console",
+         "<h5>Allure Report: ${env.BUILD_URL}/allure</h5><br>
+         <h5>Build URL: ${env.BUILD_URL}</h5><br>
+         <h5>Build URL: Console Output: ${env.BUILD_URL}/console</h5>",
          mimeType: 'text/html'
           );
         }
