@@ -30,8 +30,8 @@ pipeline {
                     to: "${params.emailRecipient}",
                     subject: "Build failed in Jenkins: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
                     body:
-                    "<>Example</b><br> Build URL: FAILURE: ${env.BUILD_URL} <br> Console Output: ${env.BUILD_URL}/console"
-
+                    "<>Example</b><br> Build URL: FAILURE: ${env.BUILD_URL} <br> Console Output: ${env.BUILD_URL}/console",
+                    mimeType: 'text/html'
                     );
         }
     }
