@@ -2,6 +2,7 @@ package pl.example.api.requests.pet;
 
 import io.restassured.response.Response;
 import org.json.JSONObject;
+import pl.example.api.dto.pet.request.AddPetRequestDto;
 import pl.example.api.dto.pet.response.AddPetResponseDto;
 import pl.example.api.properties.AppProperties;
 import pl.example.api.requests.BaseRequest;
@@ -23,7 +24,7 @@ public class AddPet {
     }
 
     // meteoda ykożystuje pojo, deserializacja czyli zamiast typu zwracanego response zwrócimy obiekt javovy CreateTaskResponseDto
-    public static AddPetResponseDto addPet(AddPetResponseDto pet) {
+    public static AddPetResponseDto addPet(AddPetRequestDto pet) {
         return given()
                 .spec(BaseRequest.requestSpecWithLogs()) //powtarzalna specyfikacja dla wszystkich requestów
                 .body(pet) //przy dto nie musimy wywoływac metody to string, poniewaz juz zawiera
