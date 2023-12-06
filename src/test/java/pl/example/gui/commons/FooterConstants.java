@@ -1,4 +1,4 @@
-package pl.example.commons;
+package pl.example.gui.commons;
 
 import java.util.ArrayList;
 import java.util.List;

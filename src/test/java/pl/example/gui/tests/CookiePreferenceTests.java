@@ -5,7 +5,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-import pl.example.commons.CookiesConstants;
+import pl.example.gui.commons.CookiesConstants;
 import pl.example.gui.driver.browser.Browser;
 import pl.example.gui.driver.browser.BrowserUtils;
 import pl.example.gui.driver.browser.PageUrl;

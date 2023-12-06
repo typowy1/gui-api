@@ -1,5 +1,6 @@
 package pl.example.gui.tests;
 
+import com.google.common.collect.ImmutableMap;
 import io.qameta.allure.Step;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -11,6 +12,8 @@ import pl.example.gui.driver.browser.PageUrl;
 import pl.example.gui.driver.manager.DriverSetup;
 import pl.example.gui.pages.CookiesConsentBarPage;
 import propertiesConfig.ConfigurationProperties;
+
+import static com.github.automatedowl.tools.AllureEnvironmentWriter.allureEnvironmentWriter;
 
 public class BaseTest {
 
@@ -30,6 +33,12 @@ public class BaseTest {
 
         cookiesConsentBarPage = new CookiesConsentBarPage();
         cookiesConsentBarPage.clickAcceptAllButton();
+
+        allureEnvironmentWriter(
+                ImmutableMap.<String, String>builder()
+                        .put("Browser", browserType.toString())
+                        .put("URL", APPLICATION_URL)
+                        .build());
     }
 
     @Step("Disposing browser")
