@@ -71,12 +71,14 @@ public class CommonMethods {
     }
 
     public static void clickOnMovingElement(WebElement element) {
-        try {
-            CommonMethods.clickOnElementUsingJS(element);
-            CommonMethods.markElementWithColor(element);
-        } catch (ElementClickInterceptedException e) {
-            throw new RuntimeException(e);
-        }
+        CommonMethods.clickOnElementUsingJS(element);
+        CommonMethods.markElementWithColor(element);
+//        try {
+//            CommonMethods.clickOnElementUsingJS(element);
+//            CommonMethods.markElementWithColor(element);
+//        } catch (ElementClickInterceptedException e) {
+//            throw new RuntimeException(e);
+//        }
     }
 
     public static String getTextFromElement(WebElement element) {

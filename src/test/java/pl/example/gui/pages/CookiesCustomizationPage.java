@@ -1,6 +1,7 @@
 package pl.example.gui.pages;
 
 import io.qameta.allure.Step;
+import org.openqa.selenium.ElementClickInterceptedException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import pl.example.gui.commonMethods.CommonMethods;
@@ -42,7 +43,12 @@ public class CookiesCustomizationPage extends BasePage {
 
     @Step("Click Accept all button")
     public void clickAcceptAllButton() {
-        CommonMethods.clickOnMovingElement(acceptAllButton);
+//        CommonMethods.clickOnMovingElement(acceptAllButton);
+        try {
+            CommonMethods.clickOnElement(acceptAllButton);
+        } catch (ElementClickInterceptedException e) {
+            CommonMethods.clickOnElement(acceptAllButton);
+        }
         log().info("Clicked 'Accept all' button in cookies customization window");
     }
 
