@@ -127,6 +127,6 @@ public class CookiePreferenceE2ETests extends BaseTest {
         cookiesCustomizationPage.closeCookiePreferencesModal();
         cookiesConsentBarPage.clickRejectAllButton();
 
-        assertThat(cookiesConsentBarPage.getCookiesConsentBar().isDisplayed()).isTrue();
+        assertThat(cookiesConsentBarPage.getCookiesConsentBar().isDisplayed()).as("Cookies Consent Bar should be displayed").isTrue();
     }
 }
