@@ -6,23 +6,23 @@
         <listener class-name="pl.example.gui.utils.TestListener"/>
     </listeners>
 
-<!--    <test name="Top Menu E2E Tests">-->
-<!--        <classes>-->
-<!--            <class name="pl.example.gui.tests.e2e.TopMenuE2ETests"/>-->
-<!--        </classes>-->
-<!--    </test>-->
+    <test name="Top Menu E2E Tests">
+        <classes>
+            <class name="pl.example.gui.tests.e2e.TopMenuE2ETests"/>
+        </classes>
+    </test>
 
-<!--    <test name="Cookie preference E2E Tests">-->
-<!--        <classes>-->
-<!--            <class name="pl.example.gui.tests.e2e.CookiePreferenceE2ETests"/>-->
-<!--        </classes>-->
-<!--    </test>-->
+    <test name="Cookie preference E2E Tests">
+        <classes>
+            <class name="pl.example.gui.tests.e2e.CookiePreferenceE2ETests"/>
+        </classes>
+    </test>
 
-<!--    <test name="Footer E2E Tests">-->
-<!--        <classes>-->
-<!--            <class name="pl.example.gui.tests.e2e.FooterE2ETests"/>-->
-<!--        </classes>-->
-<!--    </test>-->
+    <test name="Footer E2E Tests">
+        <classes>
+            <class name="pl.example.gui.tests.e2e.FooterE2ETests"/>
+        </classes>
+    </test>
 
     <test name="Join Us E2E Tests">
         <classes>
