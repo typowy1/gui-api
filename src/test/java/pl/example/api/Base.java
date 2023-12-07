@@ -1,18 +1,14 @@
-package pl.example.api.requests;
+package pl.example.api;
 
 import io.qameta.allure.restassured.AllureRestAssured;
 import io.restassured.builder.RequestSpecBuilder;
-import io.restassured.config.RestAssuredConfig;
 import io.restassured.filter.log.RequestLoggingFilter;
 import io.restassured.filter.log.ResponseLoggingFilter;
 import io.restassured.http.ContentType;
-import io.restassured.mapper.ObjectMapperType;
 import io.restassured.specification.RequestSpecification;
 import pl.example.api.properties.AppProperties;
 
-import static io.restassured.config.ObjectMapperConfig.objectMapperConfig;
-
-public class BaseRequest {
+public class Base {
 
     private static RequestSpecBuilder requestBuilder;
 
