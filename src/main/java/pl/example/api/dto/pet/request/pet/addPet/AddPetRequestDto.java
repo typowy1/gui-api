@@ -6,7 +6,6 @@ import java.util.List;
 
 @Data
 public class AddPetRequestDto {
-    private Integer id;
     private Category category;
     private String name;
     private List<String> photoUrls = null;

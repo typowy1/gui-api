@@ -26,7 +26,6 @@ public class AddPetTestDataGenerator extends TestDataGenerator {
         tagList.add(tag);
 
         AddPetRequestDto pet = new AddPetRequestDto();
-        pet.setId(faker().number().numberBetween(1, 9999));
         pet.setCategory(category);
         pet.setName(faker().name().firstName());
         pet.setPhotoUrls(photoList);
@@ -36,7 +35,7 @@ public class AddPetTestDataGenerator extends TestDataGenerator {
     }
 
     private String getRandoStatus() {
-        List<String> statusList = Arrays.asList("available", "pending", "sold");
+        List<String> statusList = Arrays.asList("available", "pending", "sold", "available", "pending", "sold", "available", "pending", "sold");
         Random rand = new Random();
         int randomItem = rand.nextInt(statusList.size());
         String randomStatus = statusList.get(randomItem);
