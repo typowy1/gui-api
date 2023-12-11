@@ -21,6 +21,7 @@ public class DeletePetTests {
     private AddPetResponseDto actualPetResponse;
     private DeletePetResponseDto deletePetResponse;
     private Map pathParams;
+
     @BeforeMethod
     public void addPetBeforeTest() {
         AddPetRequestDto pet = new AddPetTestDataGenerator().generatePetWithRandomData();
@@ -31,6 +32,7 @@ public class DeletePetTests {
 
         petId = actualPetResponse.getId();
     }
+
     @Test()
     public void deletePetTestWithPetDtoTest() {
         pathParams = new HashMap();

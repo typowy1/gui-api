@@ -29,6 +29,7 @@ public class UpdatePetTests {
     private UpdatePetResponseDto actualUpdatedPetResponse;
     private DeletePetResponseDto deletePetResponse;
     private Map pathParams;
+
     @BeforeMethod
     public void addPetBeforeTest() {
         AddPetRequestDto pet = new AddPetTestDataGenerator().generatePetWithRandomData();

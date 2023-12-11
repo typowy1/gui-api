@@ -29,6 +29,7 @@ public class FindPetByIdTests {
     private DeletePetResponseDto deletePetResponse;
     private FindPetByIdResponseDto findPetByIdResponse;
     private Map pathParams;
+
     @BeforeMethod
     public void addPetBeforeTest() {
         pet = new AddPetTestDataGenerator().generatePetWithRandomData();
