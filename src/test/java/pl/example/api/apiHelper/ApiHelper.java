@@ -13,10 +13,10 @@ import static io.restassured.RestAssured.given;
 public class ApiHelper {
 
 //    POST
-    public static Response post(JSONObject petJsonObject, String endpoint, int statusCode) {
+    public static Response post(JSONObject jsonObject, String endpoint, int statusCode) {
         return given()
                 .spec(Base.requestSpecWithLogs()) //powtarzalna specyfikacja dla wszystkich requestów
-                .body(petJsonObject.toString())
+                .body(jsonObject.toString())
                 .post(AppProperties.getBaseUri() + endpoint)
                 .then()
                 .statusCode(statusCode)
@@ -52,10 +52,10 @@ public class ApiHelper {
     }
 
 //    PUT
-    public static Response put(JSONObject petJsonObject, String endpoint, int statusCode) {
+    public static Response put(JSONObject jsonObject, String endpoint, int statusCode) {
         return given()
                 .spec(Base.requestSpecWithLogs()) //powtarzalna specyfikacja dla wszystkich requestów
-                .body(petJsonObject.toString())
+                .body(jsonObject.toString())
                 .put(AppProperties.getBaseUri() + endpoint)
                 .then()
                 .statusCode(statusCode)
