@@ -22,7 +22,7 @@ public class AddPetTests {
     private DeletePetResponseDto deletePetResponse;
     private Response response;
 
-    private Map pathParams;
+    private HashMap<String, Object> pathParams;
 
     public static long petId;
 

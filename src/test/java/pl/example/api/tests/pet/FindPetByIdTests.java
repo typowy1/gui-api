@@ -23,12 +23,12 @@ public class FindPetByIdTests {
     public static long petId;
     public static int categoryId;
     public static int tagId;
-    private static Logger logger = LogManager.getLogger(AddPetTests.class);
+    private static Logger logger = LogManager.getLogger(FindPetByIdTests.class);
     private AddPetResponseDto actualPetResponse;
     private AddPetRequestDto pet;
     private DeletePetResponseDto deletePetResponse;
     private FindPetByIdResponseDto findPetByIdResponse;
-    private Map pathParams;
+    private HashMap<String, Object> pathParams;
 
     @BeforeMethod
     public void addPetBeforeTest() {

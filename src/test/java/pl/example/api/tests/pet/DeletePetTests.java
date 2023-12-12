@@ -17,10 +17,10 @@ import java.util.Map;
 
 public class DeletePetTests {
     public static long petId;
-    private static Logger logger = LogManager.getLogger(AddPetTests.class);
+    private static Logger logger = LogManager.getLogger(DeletePetTests.class);
     private AddPetResponseDto actualPetResponse;
     private DeletePetResponseDto deletePetResponse;
-    private Map pathParams;
+    private HashMap<String, Object> pathParams;
 
     @BeforeMethod
     public void addPetBeforeTest() {
