@@ -20,6 +20,7 @@ public class AddPetJsonObjectTests {
     private static Logger logger = LogManager.getLogger(AddPetDTOTests.class);
     private Faker faker;
     private Response response;
+    private JSONObject petJsonObject;
 
     private HashMap<String, Object> pathParams;
 
@@ -44,7 +45,7 @@ public class AddPetJsonObjectTests {
         List<JSONObject> tags = new ArrayList<>();
         tags.add(tag);
 
-        JSONObject petJsonObject = new JSONObject();
+        petJsonObject = new JSONObject();
         petJsonObject.put("category", category);
         petJsonObject.put("name", faker.name().firstName());
         petJsonObject.put("photoUrls", photoUrls);
