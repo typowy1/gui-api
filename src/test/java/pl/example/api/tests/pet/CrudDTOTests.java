@@ -36,10 +36,10 @@ public class CrudDTOTests {
     public void addPetTestWithPetDtoTest() {
         pet = new AddPetTestDataGenerator().generatePetWithRandomData();
         logger.info("Pet to add: " + pet);
-        petId = actualPetResponse.getId();
 
         actualPetResponse = AddANewPetToTheStoreRequest.addANewPetToTheStore(pet, 200);
         logger.info("Actual Pet: " + actualPetResponse);
+        petId = actualPetResponse.getId();
 
         SoftAssertions.assertSoftly(softly -> {
             softly.assertThat(actualPetResponse).describedAs("actualPetResponse should be equal to pet")
