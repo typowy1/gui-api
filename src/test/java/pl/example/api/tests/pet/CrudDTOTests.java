@@ -18,7 +18,6 @@ import pl.example.api.requests.petController.FindPetByIdRequest;
 import pl.example.api.requests.petController.UpdateAnExistingPetRequest;
 
 import java.util.HashMap;
-import java.util.Map;
 
 public class CrudDTOTests {
 

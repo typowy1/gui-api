@@ -16,7 +16,6 @@ import pl.example.api.requests.petController.DeletesAPetRequest;
 import pl.example.api.requests.petController.FindPetByIdRequest;
 
 import java.util.HashMap;
-import java.util.Map;
 
 public class FindPetByIdTests {
 

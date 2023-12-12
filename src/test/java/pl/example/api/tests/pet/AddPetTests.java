@@ -14,7 +14,6 @@ import pl.example.api.requests.petController.AddANewPetToTheStoreRequest;
 import pl.example.api.requests.petController.DeletesAPetRequest;
 
 import java.util.HashMap;
-import java.util.Map;
 
 public class AddPetTests {
     private static Logger logger = LogManager.getLogger(AddPetTests.class);
