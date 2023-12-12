@@ -14,9 +14,9 @@ import pl.example.api.requests.petController.DeletesAPetRequest;
 
 import java.util.HashMap;
 
-public class DeletePetTests {
+public class DeletePetDTOTests {
     public static long petId;
-    private static Logger logger = LogManager.getLogger(DeletePetTests.class);
+    private static Logger logger = LogManager.getLogger(DeletePetDTOTests.class);
     private AddPetResponseDto actualPetResponse;
     private DeletePetResponseDto deletePetResponse;
     private HashMap<String, Object> pathParams;

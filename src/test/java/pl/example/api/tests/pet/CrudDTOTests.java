@@ -24,7 +24,7 @@ public class CrudDTOTests {
     public static long petId;
     public static int categoryId;
     public static int tagId;
-    private static Logger logger = LogManager.getLogger(FindPetByIdTests.class);
+    private static Logger logger = LogManager.getLogger(FindPetByIdDTOTests.class);
     private AddPetResponseDto actualPetResponse;
     private AddPetRequestDto pet;
     private DeletePetResponseDto deletePetResponse;
@@ -36,6 +36,7 @@ public class CrudDTOTests {
     public void addPetTestWithPetDtoTest() {
         pet = new AddPetTestDataGenerator().generatePetWithRandomData();
         logger.info("Pet to add: " + pet);
+        petId = actualPetResponse.getId();
 
         actualPetResponse = AddANewPetToTheStoreRequest.addANewPetToTheStore(pet, 200);
         logger.info("Actual Pet: " + actualPetResponse);
@@ -47,7 +48,6 @@ public class CrudDTOTests {
             softly.assertThat(actualPetResponse.getId()).describedAs("Wrong value in response Pet: id").isNotNull();
             softly.assertThat(actualPetResponse.getId()).describedAs("Wrong value in response Pet: id").isGreaterThan(0);
         });
-        petId = actualPetResponse.getId();
     }
 
     @Test(priority = 2)

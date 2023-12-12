@@ -19,11 +19,11 @@ import pl.example.api.requests.petController.UpdateAnExistingPetRequest;
 
 import java.util.HashMap;
 
-public class UpdatePetTests {
+public class UpdatePetDTOTests {
     public static long petId;
     public static int categoryId;
     public static int tagId;
-    private static Logger logger = LogManager.getLogger(UpdatePetTests.class);
+    private static Logger logger = LogManager.getLogger(UpdatePetDTOTests.class);
     private AddPetResponseDto actualPetResponse;
     private UpdatePetResponseDto actualUpdatedPetResponse;
     private DeletePetResponseDto deletePetResponse;
