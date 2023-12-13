@@ -1,4 +1,4 @@
-package pl.example.api.dto.pet.response.pet.deletePet;
+package pl.example.api.dto.response.pet.deletePet;
 
 import lombok.Data;
 

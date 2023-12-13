@@ -1,9 +1,9 @@
-package pl.example.api.dto.pet.response.pet.addPet;
+package pl.example.api.dto.response.pet.findPetById;
 
 import lombok.Data;
 
 @Data
-public class Tag {
+public class Category {
     private Integer id;
     private String name;
 }

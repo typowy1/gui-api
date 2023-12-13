@@ -1,11 +1,11 @@
-package pl.example.api.dto.pet.response.pet.UpdatePet;
+package pl.example.api.dto.request.pet.addPet;
 
 import lombok.Data;
 
 import java.util.List;
+
 @Data
-public class UpdatePetResponseDto {
-    private Long id;
+public class AddPetRequestDto {
     private Category category;
     private String name;
     private List<String> photoUrls = null;

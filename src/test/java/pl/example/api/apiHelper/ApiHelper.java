@@ -25,10 +25,10 @@ public class ApiHelper {
                 .response();
     }
 
-    public static Response post(File petFile, String endpoint, int statusCode) {
+    public static Response post(File filePath, String endpoint, int statusCode) {
         return given()
                 .spec(Base.requestSpecWithLogs()) //powtarzalna specyfikacja dla wszystkich requestów
-                .body(petFile)
+                .body(filePath)
                 .post(AppProperties.getBaseUri() + endpoint)
                 .then()
                 .statusCode(statusCode)
@@ -64,10 +64,10 @@ public class ApiHelper {
                 .response();
     }
 
-    public static Response put(File petFile, String endpoint, int statusCode) {
+    public static Response put(File filePath, String endpoint, int statusCode) {
         return given()
                 .spec(Base.requestSpecWithLogs()) //powtarzalna specyfikacja dla wszystkich requestów
-                .body(petFile)
+                .body(filePath)
                 .put(AppProperties.getBaseUri() + endpoint)
                 .then()
                 .statusCode(statusCode)

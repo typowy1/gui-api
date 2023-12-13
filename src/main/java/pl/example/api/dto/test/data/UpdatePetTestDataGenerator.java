@@ -1,8 +1,8 @@
 package pl.example.api.dto.test.data;
 
-import pl.example.api.dto.pet.request.pet.updatePet.Category;
-import pl.example.api.dto.pet.request.pet.updatePet.Tag;
-import pl.example.api.dto.pet.request.pet.updatePet.UpdatePetRequestDto;
+import pl.example.api.dto.request.pet.updatePet.Category;
+import pl.example.api.dto.request.pet.updatePet.Tag;
+import pl.example.api.dto.request.pet.updatePet.UpdatePetRequestDto;
 
 import java.util.ArrayList;
 import java.util.Arrays;

@@ -1,4 +1,4 @@
-package pl.example.api.dto.pet.response.pet.UpdatePet;
+package pl.example.api.dto.request.pet.addPet;
 
 import lombok.Data;
 

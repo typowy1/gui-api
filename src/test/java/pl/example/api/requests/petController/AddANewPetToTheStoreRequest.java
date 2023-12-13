@@ -3,8 +3,8 @@ package pl.example.api.requests.petController;
 import io.restassured.response.Response;
 import org.json.JSONObject;
 import pl.example.api.apiHelper.ApiHelper;
-import pl.example.api.dto.pet.request.pet.addPet.AddPetRequestDto;
-import pl.example.api.dto.pet.response.pet.addPet.AddPetResponseDto;
+import pl.example.api.dto.request.pet.addPet.AddPetRequestDto;
+import pl.example.api.dto.response.pet.addPet.AddPetResponseDto;
 import pl.example.api.properties.AppProperties;
 
 import java.io.File;
@@ -16,8 +16,8 @@ public class AddANewPetToTheStoreRequest {
         return ApiHelper.post(petJsonObject, ADD_PET_ENDPOINT, statusCode);
     }
 
-    public static Response addANewPetToTheStore(File petFile, int statusCode) {
-        return ApiHelper.post(petFile, ADD_PET_ENDPOINT, statusCode);
+    public static Response addANewPetToTheStore(File filePath, int statusCode) {
+        return ApiHelper.post(filePath, ADD_PET_ENDPOINT, statusCode);
     }
 
     // meteoda wykorzystuje pojo, deserializacja zwrócimy response i wstrzykniemy go do klasy AddPetResponseDto, która reprezentuje response utworzonego Pet
