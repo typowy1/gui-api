@@ -9,7 +9,8 @@ pipeline {
 
         stage('Execute tests') {
             steps {
-            if(TestSuite == api_tests_suite) {
+            def testSuite=params.TestSuite
+            if(testSuite == api_tests_suite) {
             bat "mvn clean test -Dsurefire.suiteXmlFiles=src/test/resources/testSuite/${params.TestSuite}.xml"
 
             } else {
