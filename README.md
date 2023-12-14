@@ -24,7 +24,7 @@ mvn clean test -Dsurefire.suiteXmlFiles=src\test\resources\testSuite\api_tests_s
 
 ### enkins:
 
-_**API**_
+_**GUI**_
 
 mvn clean test -Dsurefire.suiteXmlFiles=src/test/resources/testSuite/${params.TestSuite}.xml
 
