@@ -26,7 +26,7 @@ mvn clean test -Dsurefire.suiteXmlFiles=src\test\resources\testSuite\api_tests_s
 
 _**GUI**_
 
-mvn clean test -Dsurefire.suiteXmlFiles=src/test/resources/testSuite/${params.TestSuite}.xml
+mvn clean test -Dbrowser=${params.browser} -Dsurefire.suiteXmlFiles=src/test/resources/testSuite/${params.TestSuite}.xml
 
 _**API**_
 
