@@ -28,6 +28,10 @@ _**API**_
 
 mvn clean test -Dsurefire.suiteXmlFiles=src/test/resources/testSuite/${params.TestSuite}.xml
 
+_**API**_
+
+mvn clean test -Dsurefire.suiteXmlFiles=src/test/resources/testSuite/${params.TestSuite}.xml
+
 #### _**Oczywiście można też uruchamiać standardowo z poziomu klasy czy z poziomu testu w klasie testowej.**_
 
 ## **Generowanie Allure raportu z poziomu terminala**
