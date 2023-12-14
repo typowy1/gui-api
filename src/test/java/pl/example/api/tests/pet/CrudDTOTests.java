@@ -75,7 +75,7 @@ public class CrudDTOTests {
     }
 
     @TmsLink("ID-2")
-    @Severity(SeverityLevel.BLOCKER)
+    @Severity(SeverityLevel.CRITICAL)
     @Description("Crud test, updateing PET")
     @Test(priority = 3)
     public void updatePetTestWithPetDtoTest() {
@@ -92,7 +92,7 @@ public class CrudDTOTests {
     }
 
     @TmsLink("ID-2")
-    @Severity(SeverityLevel.BLOCKER)
+    @Severity(SeverityLevel.CRITICAL)
     @Description("Crud test, deleting PET")
     @Test(priority = 4)
     public void deletePetTestWithPetDtoTest() {

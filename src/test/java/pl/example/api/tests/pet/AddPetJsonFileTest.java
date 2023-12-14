@@ -1,7 +1,5 @@
 package pl.example.api.tests.pet;
 
-import com.jayway.jsonpath.DocumentContext;
-import com.jayway.jsonpath.JsonPath;
 import fileConfig.FileConfiguration;
 import io.qameta.allure.*;
 import io.restassured.response.Response;
@@ -15,7 +13,6 @@ import pl.example.api.requests.petController.AddANewPetToTheStoreRequest;
 import pl.example.api.requests.petController.DeletesAPetRequest;
 
 import java.io.File;
-import java.io.IOException;
 import java.util.HashMap;
 
 public class AddPetJsonFileTest {

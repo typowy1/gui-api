@@ -73,7 +73,7 @@ public class UpdatePetDTOTests {
         logger.info("actualUpdatedPetResponse: " + actualUpdatedPetResponse);
 
         SoftAssertions.assertSoftly(softly -> {
-            softly.assertThat(actualUpdatedPetResponse.getId()).describedAs("Wrong value in response Pet: name").isEqualTo("Tom");
+            softly.assertThat(actualUpdatedPetResponse.getName()).describedAs("Wrong value in response Pet: name").isEqualTo("Tom");
         });
     }
 
