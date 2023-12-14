@@ -8,15 +8,17 @@ pipeline {
         }
 
         stage('Execute tests') {
-            steps {
-            def testSuite=params.TestSuite
-            if(testSuite == 'api_tests_suite') {
-            bat "mvn clean test -Dsurefire.suiteXmlFiles=src/test/resources/testSuite/${params.TestSuite}.xml"
+        def testSuite=params.TestSuite
+                    if(testSuite == 'api_tests_suite') {
+                    steps {
+                          bat "mvn clean test -Dsurefire.suiteXmlFiles=src/test/resources/testSuite/${params.TestSuite}.xml"
+                                }
+                    } else {
+                    steps {
+                    bat "mvn clean test -Dbrowser=${params.browser} -Dsurefire.suiteXmlFiles=src/test/resources/testSuite/${params.TestSuite}.xml"
+                         }
 
-            } else {
-                bat "mvn clean test -Dbrowser=${params.browser} -Dsurefire.suiteXmlFiles=src/test/resources/testSuite/${params.TestSuite}.xml"
-              }
-            }
+                    }
         }
     }
     post {
