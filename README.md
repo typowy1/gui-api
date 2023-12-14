@@ -24,7 +24,7 @@ mvn clean test -Dsurefire.suiteXmlFiles=src\test\resources\testSuite\api_tests_s
 
 ### enkins:
 
-**_GUI_**
+_**GUI**_
 
 mvn clean test -Dbrowser=${params.browser} -Dsurefire.suiteXmlFiles=src/test/resources/testSuite/${params.TestSuite}.xml
 
