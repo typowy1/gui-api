@@ -2,7 +2,7 @@
 
 ### z poziomu terminala:
 
-GUI
+_**GUI**_
 
 **Dla Firefox:**
 
@@ -16,19 +16,19 @@ mvn clean test -Dbrowser=CHROME '-Dsurefire.suiteXmlFiles=src\test\resources\tes
 
 mvn clean test -Dbrowser=CHROME -Dsurefire.suiteXmlFiles=src\test\resources\testSuite\gui_tests_suite.xml
 
-API
+**_API_**
 
 mvn clean test '-Dsurefire.suiteXmlFiles=src\test\resources\testSuite\api_tests_suite.xml'
 
 mvn clean test -Dsurefire.suiteXmlFiles=src\test\resources\testSuite\api_tests_suite.xml
 
-### Na Jenkins-ie:
+### enkins:
 
-Gui
+**_GUI_**
 
 mvn clean test -Dbrowser=${params.browser} -Dsurefire.suiteXmlFiles=src/test/resources/testSuite/${params.TestSuite}.xml
 
-Api
+_**API**_
 
 mvn clean test -Dsurefire.suiteXmlFiles=src/test/resources/testSuite/${params.TestSuite}.xml
 
