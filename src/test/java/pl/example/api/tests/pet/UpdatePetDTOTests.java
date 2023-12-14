@@ -1,5 +1,6 @@
 package pl.example.api.tests.pet;
 
+import io.qameta.allure.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.assertj.core.api.SoftAssertions;
@@ -42,6 +43,9 @@ public class UpdatePetDTOTests {
         tagId = actualPetResponse.getTags().get(0).getId();
     }
 
+    @TmsLink("ID-4")
+    @Severity(SeverityLevel.BLOCKER)
+    @Description("The goal of this test is to update Pet and check if returned proper response")
     @Test
     public void updatePetTestWithPetDtoTest() {
         UpdatePetRequestDto updatePet = new UpdatePetTestDataGenerator().generateUpdatePetWithRandomData(petId, categoryId, tagId);
@@ -53,6 +57,23 @@ public class UpdatePetDTOTests {
         SoftAssertions.assertSoftly(softly -> {
             softly.assertThat(actualUpdatedPetResponse).describedAs("Response actualUpdatedPetResponse should be equal to updatePet")
                     .usingRecursiveComparison().isEqualTo(updatePet);
+        });
+    }
+
+    @Issue("DEFECT-6")
+    @TmsLink("ID-6")
+    @Severity(SeverityLevel.BLOCKER)
+    @Description("The goal of this test is to update Pet and check if returned proper response")
+    @Test
+    public void updatePetTestWithPetDtoFailedTest() {
+        UpdatePetRequestDto updatePet = new UpdatePetTestDataGenerator().generateUpdatePetWithRandomData(petId, categoryId, tagId);
+        logger.info("updatePet: " + updatePet);
+
+        actualUpdatedPetResponse = UpdateAnExistingPetRequest.updateAnExistingPet(updatePet, 200);
+        logger.info("actualUpdatedPetResponse: " + actualUpdatedPetResponse);
+
+        SoftAssertions.assertSoftly(softly -> {
+            softly.assertThat(actualUpdatedPetResponse.getId()).describedAs("Wrong value in response Pet: name").isEqualTo("Tom");
         });
     }
 

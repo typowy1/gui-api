@@ -1,5 +1,9 @@
 package pl.example.api.tests.pet;
 
+import io.qameta.allure.Description;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
+import io.qameta.allure.TmsLink;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.assertj.core.api.SoftAssertions;
@@ -32,6 +36,9 @@ public class CrudDTOTests {
     private UpdatePetResponseDto actualUpdatedPetResponse;
     private HashMap<String, Object> pathParams;
 
+    @TmsLink("ID-2")
+    @Severity(SeverityLevel.CRITICAL)
+    @Description("Crud test, adding PET")
     @Test(priority = 1)
     public void addPetTestWithPetDtoTest() {
         pet = new AddPetTestDataGenerator().generatePetWithRandomData();
@@ -50,6 +57,9 @@ public class CrudDTOTests {
         });
     }
 
+    @TmsLink("ID-2")
+    @Severity(SeverityLevel.CRITICAL)
+    @Description("Crud test, getting PET")
     @Test(priority = 2)
     public void findPetByIdDto() {
         pathParams = new HashMap();
@@ -64,6 +74,9 @@ public class CrudDTOTests {
         });
     }
 
+    @TmsLink("ID-2")
+    @Severity(SeverityLevel.BLOCKER)
+    @Description("Crud test, updateing PET")
     @Test(priority = 3)
     public void updatePetTestWithPetDtoTest() {
         UpdatePetRequestDto updatePet = new UpdatePetTestDataGenerator().generateUpdatePetWithRandomData(petId, categoryId, tagId);
@@ -78,6 +91,9 @@ public class CrudDTOTests {
         });
     }
 
+    @TmsLink("ID-2")
+    @Severity(SeverityLevel.BLOCKER)
+    @Description("Crud test, deleting PET")
     @Test(priority = 4)
     public void deletePetTestWithPetDtoTest() {
         pathParams = new HashMap();

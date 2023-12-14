@@ -1,5 +1,6 @@
 package pl.example.api.tests.pet;
 
+import io.qameta.allure.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.assertj.core.api.SoftAssertions;
@@ -42,8 +43,11 @@ public class FindPetByIdDTOTests {
         tagId = actualPetResponse.getTags().get(0).getId();
     }
 
+    @TmsLink("ID-4")
+    @Severity(SeverityLevel.BLOCKER)
+    @Description("The goal of this test is to get Pet and check if returned proper response")
     @Test
-    public void findPetByIdDto() {
+    public void findPetByIdDtoTest() {
         pathParams = new HashMap();
         pathParams.put("petId", petId);
 
@@ -53,6 +57,24 @@ public class FindPetByIdDTOTests {
                     .usingRecursiveComparison().ignoringFields("id").isEqualTo(pet);
 
             softly.assertThat(findPetByIdResponse.getId()).describedAs("Wrong value in response Pet: id").isEqualTo(petId);
+        });
+    }
+
+    @Issue("DEFECT-6")
+    @TmsLink("ID-4")
+    @Severity(SeverityLevel.BLOCKER)
+    @Description("The goal of this test is to get Pet and check if returned proper response")
+    @Test
+    public void findPetByIdDtoFailedTest() {
+        pathParams = new HashMap();
+        pathParams.put("petId", petId);
+
+        findPetByIdResponse = FindPetByIdRequest.findPetByIdDto(200, pathParams);
+        SoftAssertions.assertSoftly(softly -> {
+            softly.assertThat(findPetByIdResponse).describedAs("findPetByIdResponse should be equal to pet")
+                    .usingRecursiveComparison().ignoringFields("id").isEqualTo(pet);
+
+            softly.assertThat(findPetByIdResponse.getId()).describedAs("Wrong value in response Pet: id").isEqualTo(678);
         });
     }
 

@@ -1,5 +1,6 @@
 package pl.example.api.tests.pet;
 
+import io.qameta.allure.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.assertj.core.api.SoftAssertions;
@@ -32,10 +33,30 @@ public class DeletePetDTOTests {
         petId = actualPetResponse.getId();
     }
 
+    @TmsLink("ID-3")
+    @Severity(SeverityLevel.BLOCKER)
+    @Description("The goal of this test is to delete Pet and check if returned proper response")
     @Test()
     public void deletePetTestWithPetDtoTest() {
         pathParams = new HashMap();
         pathParams.put("petId", petId);
+
+        deletePetResponse = DeletesAPetRequest.deleteAPetDto(200, pathParams);
+        SoftAssertions.assertSoftly(softly -> {
+            softly.assertThat(deletePetResponse.getCode()).describedAs("Wrong value in response delete Pet: code").isEqualTo(200);
+            softly.assertThat(deletePetResponse.getType()).describedAs("Wrong value in response Pet: type").isEqualTo("unknown");
+            softly.assertThat(deletePetResponse.getMessage()).describedAs("Wrong value in response Pet: message").isEqualTo(String.valueOf(petId));
+        });
+    }
+
+    @Issue("DEFECT-5")
+    @TmsLink("ID-3")
+    @Severity(SeverityLevel.BLOCKER)
+    @Description("The goal of this test is to delete Pet and check if returned proper response")
+    @Test()
+    public void deletePetTestWithPetDtoFailedTest() {
+        pathParams = new HashMap();
+        pathParams.put("petId", 555);
 
         deletePetResponse = DeletesAPetRequest.deleteAPetDto(200, pathParams);
         SoftAssertions.assertSoftly(softly -> {
