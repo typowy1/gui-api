@@ -9,7 +9,7 @@ pipeline {
 
         stage('Execute tests') {
             steps {
-            if(params.browser == null) {
+            if(browser == null) {
             bat "mvn clean test -Dsurefire.suiteXmlFiles=src/test/resources/testSuite/${params.TestSuite}.xml"
 
             } else {
