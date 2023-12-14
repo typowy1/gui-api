@@ -9,7 +9,7 @@ pipeline {
 
         stage('Execute tests') {
             steps {
-            if(TestSuite.contains('gui')) {
+            if(TestSuite.contains("gui")) {
                 bat "mvn clean test -Dbrowser=${params.browser} -Dsurefire.suiteXmlFiles=src/test/resources/testSuite/${params.TestSuite}.xml"
             } else {
                 bat "mvn clean test -Dsurefire.suiteXmlFiles=src/test/resources/testSuite/${params.TestSuite}.xml"
