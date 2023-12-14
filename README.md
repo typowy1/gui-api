@@ -22,7 +22,7 @@ mvn clean test '-Dsurefire.suiteXmlFiles=src\test\resources\testSuite\api_tests_
 
 mvn clean test -Dsurefire.suiteXmlFiles=src\test\resources\testSuite\api_tests_suite.xml
 
-### enkins:
+### Jenkins:
 
 _**GUI**_
 
