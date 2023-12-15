@@ -17,6 +17,7 @@ import java.util.HashMap;
 
 public class AddPetJsonFileTest {
     private static Logger logger = LogManager.getLogger(AddPetDTOTests.class);
+
     private Response response;
     private File petJsonFile;
 
