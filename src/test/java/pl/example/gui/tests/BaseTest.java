@@ -34,6 +34,15 @@ public class BaseTest {
         cookiesConsentBarPage = new CookiesConsentBarPage();
         cookiesConsentBarPage.clickAcceptAllButton();
 
+//       TODO sprawdzić czy działą
+//        if(browserType != null){
+//            allureEnvironmentWriter(
+//                ImmutableMap.<String, String>builder()
+//                        .put("Browser", browserType.toString())
+//                        .put("URL", APPLICATION_URL)
+//                        .build());
+//        }
+
 //        nie działa do końca, służy do wyświetlenia informacji o srodowisku na allurowym raporcie
 //        trzeba zrobić metode. jeśli browserType.toString() zwróci null to niech wezmie wartosc browser z propertiesów
 //        allureEnvironmentWriter(
