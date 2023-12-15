@@ -6,7 +6,6 @@ _**GUI**_
 
 **Dla Firefox:**
 
-
 mvn clean test -Dbrowser=FIREFOX '-Dsurefire.suiteXmlFiles=src\test\resources\testSuite\gui_tests_suite.xml'
 
 mvn clean test -Dbrowser=FIREFOX -Dsurefire.suiteXmlFiles=src\test\resources\testSuite\gui_tests_suite.xml
